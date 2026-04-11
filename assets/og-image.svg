@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
 <defs>
   <linearGradient id="g" x1="0" x2="1">
-    <stop offset="0" stop-color="#1b1714"/>
-    <stop offset="1" stop-color="#8b6a3f"/>
+    <stop offset="0" stop-color="#0f2138"/>
+    <stop offset="1" stop-color="#1f5fae"/>
   </linearGradient>
 </defs>
 <rect width="1200" height="630" fill="url(#g)"/>
-<circle cx="900" cy="315" r="120" fill="none" stroke="#ead7b8" stroke-width="18"/>
-<line x1="900" y1="315" x2="900" y2="235" stroke="#ead7b8" stroke-width="12" stroke-linecap="round"/>
-<line x1="900" y1="315" x2="970" y2="350" stroke="#ead7b8" stroke-width="12" stroke-linecap="round"/>
-<text x="110" y="250" fill="#f8efe2" font-family="Georgia, serif" font-size="72">Colecionar Relógios</text>
-<text x="110" y="325" fill="#ead7b8" font-family="Georgia, serif" font-size="34">Relógios vintage e neo-vintage</text>
-<text x="110" y="380" fill="#ead7b8" font-family="Georgia, serif" font-size="34">com história, curadoria e personalidade</text>
+<ellipse cx="930" cy="315" rx="130" ry="80" fill="none" stroke="#d9ebff" stroke-width="18"/>
+<circle cx="930" cy="315" r="42" fill="#ffffff"/>
+<circle cx="930" cy="315" r="20" fill="#1f5fae"/>
+<text x="100" y="255" fill="#ffffff" font-family="Georgia, serif" font-size="72">Colecionar Relógios</text>
+<text x="100" y="330" fill="#d9ebff" font-family="Georgia, serif" font-size="34">Curadoria vintage e neo-vintage</text>
+<text x="100" y="382" fill="#d9ebff" font-family="Georgia, serif" font-size="34">com identidade branca e azul</text>
 </svg>

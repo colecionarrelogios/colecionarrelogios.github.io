@@ -15,3 +15,6 @@ Estrutura pronta para GitHub Pages.
 - Inserir link real do WhatsApp em `contato.html`.
 - Substituir os textos de coleção pelos seus relógios reais.
 - Adicionar novos artigos no blog.
+
+- Paleta atualizada para branco e azul, inspirada no olho grego.
+- Home com galeria de 4 blocos visuais pronta para substituir por fotos reais.
