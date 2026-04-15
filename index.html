@@ -8,21 +8,28 @@
     :root{
       --bg:#ffffff;
       --blue:#1f5fae;
-      --blue-soft:#e9f2ff;
+      --blue-dark:#163f72;
+      --blue-soft:#eef5ff;
       --text:#0f1c2e;
       --muted:#5b6b7c;
       --line:#e6edf5;
-      --max:1100px;
+      --max:1120px;
+      --shadow:0 16px 40px rgba(15,28,46,.06);
+      --radius:18px;
     }
 
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family: Georgia, "Times New Roman", serif;
       background:var(--bg);
       color:var(--text);
       line-height:1.7;
+      -webkit-font-smoothing:antialiased;
     }
+
+    a{color:inherit;text-decoration:none}
 
     .container{
       width:min(100% - 40px, var(--max));
@@ -32,7 +39,8 @@
     header{
       position:sticky;
       top:0;
-      background:#fff;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(10px);
       border-bottom:1px solid var(--line);
       z-index:10;
     }
@@ -42,69 +50,134 @@
       justify-content:space-between;
       align-items:center;
       padding:18px 0;
+      gap:24px;
     }
 
     .brand{
       font-weight:700;
-      letter-spacing:.04em;
+      letter-spacing:.05em;
       text-transform:uppercase;
       font-size:14px;
+      color:var(--text);
     }
 
     nav{
       display:flex;
-      gap:22px;
+      gap:10px;
       font-size:14px;
       color:var(--muted);
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    nav a{
+      padding:8px 14px;
+      border-radius:999px;
+      transition:.2s ease;
     }
 
     nav a:hover{
-      color:var(--blue);
+      color:var(--blue-dark);
+      background:var(--blue-soft);
     }
 
     .hero{
-      padding:100px 0 60px;
+      padding:88px 0 64px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:56px;
+      align-items:center;
     }
 
     .hero h1{
-      font-size:clamp(40px,6vw,72px);
-      max-width:12ch;
-      line-height:1.05;
+      font-size:clamp(42px,6vw,76px);
+      max-width:10ch;
+      line-height:1.02;
+      letter-spacing:-.03em;
+      margin:0;
     }
 
     .hero p{
       max-width:520px;
-      margin-top:20px;
+      margin:22px 0 0;
       color:var(--muted);
+      font-size:1.02rem;
+    }
+
+    .hero-media{
+      height:520px;
+      background:linear-gradient(180deg,#f8fbff,#eef5ff);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      position:relative;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-media::before{
+      content:"";
+      position:absolute;
+      inset:18px;
+      border:1px solid rgba(31,95,174,.1);
+      border-radius:12px;
+    }
+
+    .hero-media::after{
+      content:"";
+      position:absolute;
+      width:170px;
+      height:170px;
+      border-radius:50%;
+      border:5px solid var(--blue);
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      box-shadow:0 0 0 18px rgba(31,95,174,.06);
     }
 
     .section{
-      padding:80px 0;
+      padding:88px 0;
       border-top:1px solid var(--line);
     }
 
     .split{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:60px;
+      gap:64px;
       align-items:center;
     }
 
     .text h2{
-      font-size:32px;
-      margin-bottom:16px;
+      font-size:34px;
+      margin:0 0 16px;
+      letter-spacing:-.02em;
     }
 
     .text p{
       color:var(--muted);
-      max-width:520px;
+      max-width:540px;
+      margin:0;
     }
 
     .image{
       height:420px;
       background:var(--blue-soft);
       border:1px solid var(--line);
+      border-radius:var(--radius);
       position:relative;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .image::before{
+      content:"";
+      position:absolute;
+      inset:16px;
+      border:1px solid rgba(31,95,174,.12);
+      border-radius:12px;
     }
 
     .image::after{
@@ -120,10 +193,11 @@
     }
 
     .image.alt::after{
-      width:80px;
-      height:80px;
+      width:82px;
+      height:82px;
       background:var(--blue);
       border:none;
+      box-shadow:0 0 0 18px rgba(31,95,174,.08);
     }
 
     footer{
@@ -134,8 +208,9 @@
     }
 
     @media(max-width:900px){
-      .split{grid-template-columns:1fr}
-      .hero{padding:60px 0}
+      .hero-grid,.split{grid-template-columns:1fr}
+      .hero{padding:60px 0 48px}
+      .hero-media{height:380px}
     }
   </style>
 </head>
@@ -155,9 +230,14 @@
 
 <main>
 
-<section class="hero container">
-  <h1>Relógios com história e identidade.</h1>
-  <p>A Colecionar Relógios é uma loja focada em curadoria de peças vintage e neo-vintage, com olhar atento para design, contexto e autenticidade.</p>
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-media"></div>
+    <div>
+      <h1>Relógios com história e identidade.</h1>
+      <p>A Colecionar Relógios é uma loja focada em curadoria de peças vintage e neo-vintage, com olhar atento para design, contexto e autenticidade.</p>
+    </div>
+  </div>
 </section>
 
 <section class="section">
