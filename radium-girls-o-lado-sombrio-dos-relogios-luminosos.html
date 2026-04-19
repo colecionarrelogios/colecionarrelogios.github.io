@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Radium Girls: o lado sombrio dos relógios luminosos | Colecionar Relógios</title>
+  <meta name="description" content="Entenda a história das Radium Girls, o uso do rádio em mostradores luminosos e como esse capítulo marcou a relojoaria e a segurança do trabalho." />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8f8f6;
+      --surface: #ffffff;
+      --text: #1e2430;
+      --muted: #5e6878;
+      --line: #d9deea;
+      --accent: #204a87;
+      --accent-dark: #173760;
+      --shadow: 0 16px 50px rgba(18, 32, 56, 0.08);
+      --radius: 24px;
+      --container: 1020px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Lora', Georgia, 'Times New Roman', serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(100% - 40px, var(--container)); margin: 0 auto; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      backdrop-filter: blur(10px);
+      background: rgba(248,248,246,0.92);
+      border-bottom: 1px solid rgba(32, 74, 135, 0.08);
+    }
+
+    .header-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-mark {
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .brand-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .nav a:hover { color: var(--accent); }
+
+    .hero {
+      padding: 64px 0 28px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(32, 74, 135, 0.08);
+      color: var(--accent);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 18px;
+      line-height: 1.08;
+      font-weight: 700;
+    }
+
+    h1 { font-size: clamp(2.3rem, 5vw, 4.2rem); max-width: 12ch; }
+    h2 { font-size: clamp(1.8rem, 3vw, 2.7rem); margin-top: 10px; }
+    h3 { font-size: 1.35rem; margin-top: 28px; }
+
+    .intro {
+      font-size: 1.16rem;
+      color: var(--muted);
+      max-width: 62ch;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-image,
+    .inline-image {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: #d7dfe9;
+    }
+
+    .hero-image {
+      aspect-ratio: 1 / 1;
+    }
+
+    .hero-image img,
+    .inline-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-image::after,
+    .inline-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10, 17, 28, 0.14), rgba(10, 17, 28, 0.02));
+    }
+
+    .article-wrap {
+      padding: 8px 0 80px;
+    }
+
+    .article {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      padding: 44px;
+    }
+
+    .article p {
+      margin: 0 0 18px;
+      font-size: 1.08rem;
+      color: var(--muted);
+    }
+
+    .article strong { color: var(--text); }
+
+    .inline-image {
+      aspect-ratio: 16 / 9;
+      margin: 30px 0;
+    }
+
+    .caption {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-style: italic;
+    }
+
+    .highlight-box {
+      margin: 28px 0;
+      padding: 24px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, #ffffff, #eef3fa);
+    }
+
+    .highlight-box p:last-child { margin-bottom: 0; }
+
+    .cta-card {
+      margin-top: 34px;
+      padding: 28px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #ffffff, #eef3fa);
+      border: 1px solid var(--line);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.25s ease;
+    }
+
+    .button-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .button-primary:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+    }
+
+    .button-secondary {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--text);
+    }
+
+    .button-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .footer {
+      padding: 26px 0 40px;
+      border-top: 1px solid rgba(32, 74, 135, 0.08);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .article {
+        padding: 28px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .header-inner {
+        align-items: flex-start;
+        padding: 16px 0;
+        flex-direction: column;
+      }
+
+      .nav {
+        gap: 14px;
+        font-size: 0.9rem;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      .article {
+        padding: 22px;
+        border-radius: 22px;
+      }
+
+      .inline-image {
+        aspect-ratio: 4 / 3;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">Colecionar</span>
+        <span class="brand-name">Relógios</span>
+      </a>
+
+      <nav class="nav" aria-label="Principal">
+        <a href="index.html">Início</a>
+        <a href="#historia">História</a>
+        <a href="#impacto">Impacto</a>
+        <a href="#legado">Legado</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">História da relojoaria</span>
+          <h1>Radium Girls: o lado sombrio dos relógios luminosos</h1>
+          <p class="intro">
+            Antes de o lume ser associado a aventura, legibilidade e charme militar, houve um capítulo duro e trágico na história da relojoaria. O brilho dos mostradores pintados com rádio encantava o mercado, mas escondia um custo humano altíssimo.
+          </p>
+        </div>
+
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1518546305927-5a555bb7020d?auto=format&fit=crop&w=1400&q=80" alt="Detalhe de mostrador e ponteiros luminosos em relógio vintage" />
+        </div>
+      </div>
+    </section>
+
+    <section class="article-wrap">
+      <div class="container">
+        <article class="article">
+          <div id="historia">
+            <span class="eyebrow">Contexto</span>
+            <h2>Quando o brilho parecia sinônimo de modernidade</h2>
+            <p>
+              No início do século 20, a descoberta do rádio despertou fascínio no imaginário popular. O elemento parecia representar o futuro: ciência, energia, avanço e inovação. Não demorou para que a relojoaria adotasse tintas luminosas à base de rádio, especialmente em relógios de pulso, relógios militares, despertadores e instrumentos de painel.
+            </p>
+            <p>
+              A lógica era sedutora: um relógio que pudesse ser lido no escuro tinha apelo prático imediato. Em um período marcado por guerra, expansão industrial e valorização de tecnologias “modernas”, mostradores luminosos passaram a ser vistos como um sinal de sofisticação funcional.
+            </p>
+            <p>
+              O problema é que esse brilho não vinha sem risco. Para aplicar a tinta com precisão em números e ponteiros muito finos, fábricas contratavam jovens mulheres para o trabalho delicado de pintura manual. Foi assim que surgiram as trabalhadoras que a história consagrou como as <strong>Radium Girls</strong>.
+            </p>
+          </div>
+
+          <div class="inline-image">
+            <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=1400&q=80" alt="Relógio vintage com numerais luminosos e forte atmosfera histórica" />
+          </div>
+          <p class="caption">O lume tornou-se um símbolo de modernidade, mas sua origem teve um preço humano severo.</p>
+
+          <div id="impacto">
+            <h2>O trabalho nas fábricas e a tragédia silenciosa</h2>
+            <p>
+              Em várias oficinas, as pintoras eram instruídas a afinar o pincel com os lábios para conseguir traços precisos. O gesto era repetido inúmeras vezes ao longo do dia: “apontar” o pincel, mergulhar na tinta, pintar, e repetir. Na prática, isso significava ingerir pequenas quantidades de material radioativo continuamente.
+            </p>
+            <p>
+              Naquele momento, muitas empresas minimizavam ou escondiam os riscos. Enquanto isso, as trabalhadoras adoeciam com sintomas devastadores: dores intensas, anemia, necrose óssea, lesões graves na mandíbula e outras complicações associadas à exposição prolongada ao rádio. Em alguns casos, seus corpos literalmente passaram a emitir radiação detectável.
+            </p>
+            <p>
+              O choque entre o glamour comercial do lume e a realidade dessas operárias é um dos contrastes mais duros da história industrial. O que era vendido como avanço tecnológico virou um caso emblemático de negligência, assimetria de informação e exploração do trabalho feminino em um ambiente de baixa proteção regulatória.
+            </p>
+
+            <div class="highlight-box">
+              <p>
+                <strong>Por que isso importa para a relojoaria?</strong> Porque esse episódio mostra que materiais, processos e estética nunca existem isolados. Cada detalhe de um relógio carrega contexto técnico, histórico e humano. No caso do rádio, o brilho do mostrador também ilumina uma das páginas mais sombrias da indústria.
+              </p>
+            </div>
+          </div>
+
+          <div class="inline-image">
+            <img src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=1400&q=80" alt="Close de relógio clássico evocando a era dos mostradores antigos" />
+          </div>
+          <p class="caption">A estética dos mostradores antigos é fascinante, mas entender os materiais usados faz parte de uma leitura mais madura da peça.</p>
+
+          <div id="legado">
+            <h2>O processo judicial e o legado deixado pelas Radium Girls</h2>
+            <p>
+              Com o tempo, algumas das trabalhadoras e suas famílias passaram a enfrentar judicialmente as empresas envolvidas. O caminho foi difícil: havia resistência corporativa, debates científicos, tentativas de desacreditar as vítimas e um ambiente legal pouco preparado para lidar com doenças ocupacionais desse tipo.
+            </p>
+            <p>
+              Ainda assim, os casos das Radium Girls se tornaram decisivos para ampliar o debate sobre segurança do trabalho, responsabilidade empresarial e proteção de trabalhadores expostos a materiais perigosos. O episódio ajudou a impulsionar mudanças regulatórias e virou referência histórica em discussões sobre saúde ocupacional.
+            </p>
+            <p>
+              Para a relojoaria, esse passado também ajuda a explicar a evolução dos materiais luminosos ao longo do tempo. Depois do rádio, o setor passou a recorrer a outras substâncias, e hoje o tema da luminescência é tratado com outro grau de consciência técnica e regulatória.
+            </p>
+
+            <h3>O que esse tema ensina ao colecionador de hoje?</h3>
+            <p>
+              Primeiro, que relógios antigos devem ser lidos com profundidade. Um mostrador bonito não é apenas uma questão de patina ou design: ele também pode contar uma história sobre tecnologia, guerra, indústria e saúde pública.
+            </p>
+            <p>
+              Segundo, que contexto importa. Saber diferenciar rádio, trítio e materiais modernos não é apenas um exercício técnico; é parte de uma cultura relojoeira mais consciente e sofisticada.
+            </p>
+            <p>
+              E por fim, que a história da relojoaria não é feita só de gênios criativos, calibres famosos e grandes maisons. Ela também é feita de trabalhadores anônimos, decisões industriais e consequências humanas que não podem ser apagadas.
+            </p>
+          </div>
+
+          <div class="cta-card">
+            <span class="eyebrow">Colecionar Relógios</span>
+            <h3>Gosta desse tipo de conteúdo histórico?</h3>
+            <p>
+              Siga a Colecionar Relógios para acompanhar mais textos sobre cultura relojoeira, contexto histórico, design e peças com identidade.
+            </p>
+            <div class="actions">
+              <a class="button button-primary" href="https://www.instagram.com/colecionar_relogios" target="_blank">Seguir no Instagram</a>
+              <a class="button button-secondary" href="index.html">Voltar para o site</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© 2026 Colecionar Relógios LTDA</span>
+      <span>CNPJ 59.378.775/0001-48</span>
+    </div>
+  </footer>
+</body>
+</html>
