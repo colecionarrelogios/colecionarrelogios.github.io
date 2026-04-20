@@ -1,86 +1,358 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sobre | Colecionar Relógios</title>
-  <meta name="description" content="Conheça a proposta da Colecionar Relógios e sua visão sobre curadoria, história e apresentação de peças.">
-  <meta property="og:title" content="Sobre | Colecionar Relógios">
-  <meta property="og:description" content="Conheça a proposta da Colecionar Relógios e sua visão sobre curadoria, história e apresentação de peças.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/og-image.svg">
-  <meta property="og:url" content="https://seuusuario.github.io/colecionar-relogios/">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://seuusuario.github.io/colecionar-relogios/">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --bg: #f8f8f6;
+      --surface: #ffffff;
+      --text: #1e2430;
+      --muted: #5e6878;
+      --line: #d9deea;
+      --accent: #204a87;
+      --accent-dark: #173760;
+      --shadow: 0 16px 50px rgba(18, 32, 56, 0.08);
+      --radius: 24px;
+      --container: 980px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Lora', serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(100% - 40px, var(--container));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      background: rgba(248,248,246,0.95);
+      border-bottom: 1px solid rgba(32,74,135,0.08);
+      backdrop-filter: blur(10px);
+      z-index: 20;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 80px;
+      gap: 20px;
+    }
+
+    .brand-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      padding: 80px 0 34px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(32, 74, 135, 0.08);
+      color: var(--accent);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1, h2 {
+      margin: 0 0 18px;
+      line-height: 1.08;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      max-width: 13ch;
+    }
+
+    h2 {
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+    }
+
+    p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 1.06rem;
+    }
+
+    .hero-grid,
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .split-section {
+      padding: 28px 0;
+    }
+
+    .split-grid.reverse {
+      grid-template-columns: 0.98fr 1.02fr;
+    }
+
+    .card-image {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: #d7dfe9;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10, 17, 28, 0.14), rgba(10, 17, 28, 0.02));
+    }
+
+    .content-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 34px;
+    }
+
+    .highlight-box {
+      margin-top: 18px;
+      padding: 20px 22px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, #ffffff, #eef3fa);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.25s ease;
+    }
+
+    .button-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .button-primary:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+    }
+
+    .button-secondary {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      color: var(--text);
+    }
+
+    .button-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .footer {
+      margin-top: 70px;
+      padding: 30px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid,
+      .split-grid,
+      .split-grid.reverse {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px 0;
+      }
+
+      .nav {
+        gap: 14px;
+        font-size: 0.9rem;
+      }
+
+      .hero {
+        padding: 48px 0 20px;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      .content-card {
+        padding: 22px;
+        border-radius: 22px;
+      }
+    }
+  </style>
 </head>
 <body>
+
 <header class="site-header">
-  <div class="container nav-wrap">
-    <a class="brand" href="index.html">Colecionar Relógios</a>
-    <nav class="nav">
+  <div class="container header-inner">
+    <a href="index.html" class="brand-name">Colecionar Relógios</a>
+
+    <nav class="nav" aria-label="Principal">
       <a href="index.html">Início</a>
-      <a href="colecao.html">Coleção</a>
-      <a href="blog.html">Blog</a>
-      <a href="sobre.html">Sobre</a>
       <a href="contato.html">Contato</a>
+      <a href="termos.html">Termos</a>
+      <a href="privacidade.html">Privacidade</a>
     </nav>
   </div>
 </header>
 
 <main>
-<section class="page-hero">
-  <div class="container">
-    <p class="section-label">Sobre</p>
-    <h1>Uma marca construída na intersecção entre comércio, repertório e gosto.</h1>
-  </div>
-</section>
-
-<section class="section" style="padding-top:24px">
-  <div class="container page-layout">
-    <div class="page-card article-content">
-      <h2>A ideia</h2>
-      <p>A Colecionar Relógios existe para apresentar relógios com personalidade. A seleção passa por design, contexto histórico, apelo visual, coerência da peça e relevância para quem gosta de relojoaria com profundidade.</p>
-      <h2>Mais do que vitrine</h2>
-      <p>O site não precisa funcionar apenas como catálogo. Ele pode ser também um espaço editorial, onde a história de marcas, modelos, referências e períodos ajuda a dar densidade à marca.</p>
-      <h2>Posicionamento</h2>
-      <p>Essa abordagem diferencia a loja de uma operação baseada apenas em anúncios. Você passa a ter uma presença digital com assinatura própria, algo especialmente valioso no seu nicho.</p>
-    </div>
-    <aside class="sidebar-box">
-      <div class="page-card">
-        <h3>Pilares da marca</h3>
-        <ul class="mini-list">
-          <li>Curadoria com personalidade</li>
-          <li>História da relojoaria</li>
-          <li>Confiança no atendimento</li>
-          <li>Apresentação visual elegante</li>
-        </ul>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Sobre a marca</span>
+        <h1>Relógios com história, curadoria e identidade.</h1>
+        <p>A Colecionar Relógios nasceu da vontade de olhar para a relojoaria de forma mais profunda. Mais do que fichas técnicas, referências e marcas consagradas, interessam as peças que carregam presença, contexto, desenho e personalidade.</p>
+        <p>O foco da loja está na intermediação de relógios vintage e neo-vintage escolhidos com critério, sempre com atenção à autenticidade, ao estado da peça e ao significado que ela pode ter no pulso de quem compra.</p>
       </div>
-    </aside>
-  </div>
-</section>
+
+      <div class="card-image">
+        <img src="https://colecionarrelogios.github.io/universal-geneve-polerouter.jpg" alt="Relógio vintage com forte identidade estética" />
+      </div>
+    </div>
+  </section>
+
+  <section class="split-section">
+    <div class="container split-grid reverse">
+      <div class="card-image">
+        <img src="https://colecionarrelogios.github.io/cartier-ghost.jpg" alt="Relógio com mostrador marcante e linguagem autoral" />
+      </div>
+
+      <div class="content-card">
+        <span class="eyebrow">A proposta</span>
+        <h2>Curadoria para quem valoriza mais do que o nome no mostrador.</h2>
+        <p>A proposta da Colecionar Relógios é simples: selecionar relógios que façam sentido. Isso significa observar não apenas a marca, mas também a construção da peça, o desenho do mostrador, a proporção da caixa, o contexto histórico e a sensação que o relógio transmite.</p>
+        <p>Nem toda peça rara é necessariamente interessante. Nem todo relógio importante é aquele com maior apelo comercial imediato. A curadoria parte justamente dessa leitura: entender o que torna um relógio realmente especial.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="split-section">
+    <div class="container split-grid">
+      <div class="content-card">
+        <span class="eyebrow">Nosso trabalho</span>
+        <h2>Seleção, apresentação e atendimento com identidade própria.</h2>
+        <p>O trabalho da Colecionar Relógios mistura curadoria, apresentação e relação próxima com o cliente. Cada peça é estudada, apresentada com contexto e tratada com o cuidado que a relojoaria vintage exige.</p>
+        <p>Além da seleção, há atenção especial à revisão mecânica, à comunicação clara sobre estado e características do relógio, e ao atendimento direto durante todo o processo de compra, venda ou intermediação.</p>
+
+        <div class="highlight-box">
+          <p><strong>Em resumo:</strong> a loja busca construir uma seleção coerente, autoral e confiável para quem procura relógios com história e identidade real.</p>
+        </div>
+      </div>
+
+      <div class="card-image">
+        <img src="https://colecionarrelogios.github.io/heuer-camaro.jpg" alt="Relógio de coleção apresentado com estética editorial" />
+      </div>
+    </div>
+  </section>
+
+  <section class="split-section">
+    <div class="container content-card">
+      <span class="eyebrow">Colecionar Relógios</span>
+      <h2>Uma loja feita para quem gosta de relógios com passado, presença e critério.</h2>
+      <p>A Colecionar Relógios fala com um público que enxerga valor em peças com contexto. Pessoas que gostam de design, mecânica, história e detalhes. Pessoas que entendem que um relógio vintage não é apenas um objeto antigo, mas uma peça com linguagem própria e trajetória singular.</p>
+      <p>Seja para comprar, vender, intermediar ou avaliar uma peça, a proposta é oferecer uma experiência mais cuidadosa, direta e alinhada com quem realmente aprecia relojoaria.</p>
+
+      <div class="actions">
+        <a class="button button-primary" href="contato.html">Entrar em contato</a>
+        <a class="button button-secondary" href="https://www.instagram.com/colecionar_relogios" target="_blank">Seguir no Instagram</a>
+      </div>
+    </div>
+  </section>
 </main>
 
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <div>
-      <h3>Colecionar Relógios</h3>
-      <p>Curadoria de relógios vintage e neo-vintage com foco em história, design e originalidade.</p>
-    </div>
-    <div>
-      <h4>Navegação</h4>
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="colecao.html">Coleção</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="contato.html">Contato</a></li>
-        <li><a href="politica-de-privacidade.html">Política de Privacidade</a></li>
-        <li><a href="termos-de-uso.html">Termos de Uso</a></li>
-      </ul>
-    </div>
+<footer class="footer">
+  <div class="container footer-inner">
+    <span>© 2026 Colecionar Relógios LTDA</span>
+    <span>CNPJ 59.378.775/0001-48</span>
+    <span>
+      <a href="contato.html">Contato</a> ·
+      <a href="termos.html">Termos de Uso</a> ·
+      <a href="privacidade.html">Privacidade</a>
+    </span>
   </div>
 </footer>
+
 </body>
 </html>
