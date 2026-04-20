@@ -1,86 +1,131 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contato | Colecionar Relógios</title>
-  <meta name="description" content="Entre em contato com a Colecionar Relógios para compra, venda, consignação ou dúvidas.">
-  <meta property="og:title" content="Contato | Colecionar Relógios">
-  <meta property="og:description" content="Entre em contato com a Colecionar Relógios para compra, venda, consignação ou dúvidas.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/og-image.svg">
-  <meta property="og:url" content="https://seuusuario.github.io/colecionar-relogios/">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://seuusuario.github.io/colecionar-relogios/">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Termos de Uso | Colecionar Relógios</title>
+  <style>
+    :root {
+      --bg: #f8f8f6;
+      --surface: #ffffff;
+      --text: #1e2430;
+      --muted: #5e6878;
+      --line: #d9deea;
+      --accent: #204a87;
+      --shadow: 0 16px 50px rgba(18, 32, 56, 0.08);
+      --radius: 24px;
+      --container: 900px;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Lora', serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .container {
+      width: min(100% - 40px, var(--container));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      background: rgba(248,248,246,0.95);
+      border-bottom: 1px solid rgba(32,74,135,0.08);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 80px;
+    }
+
+    .brand-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .hero {
+      padding: 80px 0 40px;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin: 0 0 20px;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      margin: 34px 0 14px;
+      color: var(--text);
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 1.06rem;
+      line-height: 1.8;
+      margin: 0 0 16px;
+    }
+
+    .content-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 34px;
+    }
+
+    .footer {
+      margin-top: 80px;
+      padding: 30px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding: 48px 0 28px;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      .content-card {
+        padding: 22px;
+      }
+    }
+  </style>
 </head>
 <body>
+
 <header class="site-header">
-  <div class="container nav-wrap">
-    <a class="brand" href="index.html">Colecionar Relógios</a>
-    <nav class="nav">
-      <a href="index.html">Início</a>
-      <a href="colecao.html">Coleção</a>
-      <a href="blog.html">Blog</a>
-      <a href="sobre.html">Sobre</a>
-      <a href="contato.html">Contato</a>
-    </nav>
+  <div class="container header-inner">
+    <a href="index.html" class="brand-name">Colecionar Relógios</a>
   </div>
 </header>
 
 <main>
-<section class="page-hero">
-  <div class="container">
-    <p class="section-label">Contato</p>
-    <h1>Uma página pronta para centralizar seus principais canais.</h1>
-  </div>
-</section>
+  <section class="hero">
+    <div class="container">
+      <h1>Termos de Uso</h1>
 
-<section class="section" style="padding-top:24px">
-  <div class="container page-layout">
-    <div class="page-card article-content">
-      <h2>Como usar esta página</h2>
-      <p>Você pode transformá-la no principal ponto de entrada comercial do site, com botões de WhatsApp, Instagram, formulário e até informações sobre consignação.</p>
-      <h3>Assuntos possíveis</h3>
-      <ul>
-        <li>Interesse em uma peça disponível</li>
-        <li>Venda de relógio para a loja</li>
-        <li>Consignação</li>
-        <li>Dúvidas sobre autenticidade, história ou referências</li>
-      </ul>
-    </div>
-    <aside class="sidebar-box">
-      <div class="page-card">
-        <h3>Canais</h3>
-        <p><strong>Instagram</strong><br><a href="https://www.instagram.com/colecionarrelogios/" target="_blank" rel="noopener">@colecionarrelogios</a></p>
-        <p><strong>WhatsApp</strong><br><a href="#">adicione aqui seu link direto</a></p>
-        <p><strong>E-mail</strong><br><a href="mailto:contato@colecionarrelogios.com.br">contato@colecionarrelogios.com.br</a></p>
-      </div>
-    </aside>
-  </div>
-</section>
-</main>
+      <div class="content-card">
+        <p>Ao acessar e utilizar o site da Colecionar Relógios, você concorda com os presentes Termos de Uso. Este documento estabelece as regras gerais para navegação, consulta de conteúdo e contato por meio dos canais disponibilizados pela loja.</p>
 
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <div>
-      <h3>Colecionar Relógios</h3>
-      <p>Curadoria de relógios vintage e neo-vintage com foco em história, design e originalidade.</p>
-    </div>
-    <div>
-      <h4>Navegação</h4>
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="colecao.html">Coleção</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="contato.html">Contato</a></li>
-        <li><a href="politica-de-privacidade.html">Política de Privacidade</a></li>
-        <li><a href="termos-de-uso.html">Termos de Uso</a></li>
-      </ul>
-    </div>
-  </div>
-</footer>
-</body>
-</html>
+        <h2>1. Natureza do site</h2>
+        <p>O site da Colecionar Relógios tem caráter informativo e institucional, com o objetivo de apresentar a proposta da marca, seus serviços de intermediação, conteúdo relacionado à relojoaria e formas de contato com clientes e interessados
