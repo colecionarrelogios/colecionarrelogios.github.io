@@ -13,9 +13,14 @@
       --muted: #5e6878;
       --line: #d9deea;
       --accent: #204a87;
+      --accent-dark: #173760;
       --shadow: 0 16px 50px rgba(18, 32, 56, 0.08);
       --radius: 24px;
-      --container: 900px;
+      --container: 980px;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
@@ -23,6 +28,11 @@
       font-family: 'Lora', serif;
       background: var(--bg);
       color: var(--text);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
     .container {
@@ -35,6 +45,8 @@
       top: 0;
       background: rgba(248,248,246,0.95);
       border-bottom: 1px solid rgba(32,74,135,0.08);
+      backdrop-filter: blur(10px);
+      z-index: 20;
     }
 
     .header-inner {
@@ -42,40 +54,196 @@
       justify-content: space-between;
       align-items: center;
       min-height: 80px;
+      gap: 20px;
     }
 
     .brand-name {
       font-size: 1.5rem;
       font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
     }
 
     .hero {
       padding: 80px 0 40px;
     }
 
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(32, 74, 135, 0.08);
+      color: var(--accent);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
     h1 {
       font-size: 2.8rem;
-      margin-bottom: 20px;
+      margin: 0 0 18px;
+      line-height: 1.08;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      margin: 0 0 14px;
+      color: var(--text);
     }
 
     p {
       color: var(--muted);
-      font-size: 1.1rem;
+      font-size: 1.06rem;
+      line-height: 1.8;
+      margin: 0 0 16px;
+    }
+
+    .page-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .info-card,
+    .form-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 34px;
+    }
+
+    .info-list {
+      display: grid;
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .info-item {
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(32, 74, 135, 0.08);
+    }
+
+    .info-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .info-label {
+      display: block;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .info-value {
+      color: var(--text);
+      font-size: 1.02rem;
       line-height: 1.7;
     }
 
-    .cta {
-      margin-top: 30px;
+    .quick-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
     }
 
     .button {
-      display: inline-block;
-      padding: 14px 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 22px;
       border-radius: 999px;
+      font-weight: 700;
+      transition: 0.25s ease;
+      border: 0;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.98rem;
+    }
+
+    .button-primary {
       background: var(--accent);
       color: #fff;
-      text-decoration: none;
-      font-weight: 700;
+      box-shadow: var(--shadow);
+    }
+
+    .button-primary:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+    }
+
+    .button-secondary {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+
+    .button-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    form {
+      display: grid;
+      gap: 18px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    label {
+      font-size: 0.95rem;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      padding: 15px 16px;
+      font: inherit;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(32, 74, 135, 0.08);
+    }
+
+    textarea {
+      min-height: 160px;
+      resize: vertical;
+    }
+
+    .helper {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-top: -4px;
+    }
+
+    .form-note {
+      margin-top: 18px;
+      font-size: 0.92rem;
+      color: var(--muted);
     }
 
     .footer {
@@ -87,8 +255,32 @@
     .footer-inner {
       display: flex;
       justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
       color: var(--muted);
       font-size: 0.9rem;
+    }
+
+    @media (max-width: 860px) {
+      .page-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding: 48px 0 28px;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      .info-card,
+      .form-card {
+        padding: 22px;
+        border-radius: 20px;
+      }
     }
   </style>
 </head>
@@ -103,16 +295,84 @@
 <main>
   <section class="hero">
     <div class="container">
-      <h1>Contato</h1>
-      <p>Entre em contato para compra, venda, intermediação ou avaliação de relógios. Atendimento direto, sem burocracia.</p>
+      <span class="eyebrow">Contato</span>
+      <h1>Fale com a Colecionar Relógios</h1>
+      <p>Entre em contato para compra, venda, intermediação ou avaliação de relógios. Você pode falar diretamente pelo WhatsApp ou enviar sua mensagem pelo formulário abaixo.</p>
 
-      <div class="cta">
-        <a class="button" href="https://wa.me/551152950377?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20sobre%20rel%C3%B3gios" target="_blank">
-          Falar no WhatsApp
-        </a>
+      <div class="page-grid" style="margin-top: 34px;">
+        <div class="info-card">
+          <h2>Atendimento direto</h2>
+          <p>Se preferir um contato mais rápido, use nossos canais oficiais. Para relógios, quanto mais contexto você enviar, melhor.</p>
+
+          <div class="info-list">
+            <div class="info-item">
+              <span class="info-label">WhatsApp</span>
+              <div class="info-value">+55 11 5295-0377</div>
+            </div>
+
+            <div class="info-item">
+              <span class="info-label">Instagram</span>
+              <div class="info-value">@colecionar_relogios</div>
+            </div>
+
+            <div class="info-item">
+              <span class="info-label">Assuntos</span>
+              <div class="info-value">Compra, venda, intermediação, avaliação e dúvidas gerais sobre relógios.</div>
+            </div>
+          </div>
+
+          <div class="quick-actions">
+            <a class="button button-primary" href="https://wa.me/551152950377?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20rel%C3%B3gios" target="_blank">Falar no WhatsApp</a>
+            <a class="button button-secondary" href="https://www.instagram.com/colecionar_relogios" target="_blank">Abrir Instagram</a>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h2>Envie uma mensagem</h2>
+          <p class="helper">Substitua o valor de <strong>action</strong> pelo seu endpoint do Formspree antes de publicar.</p>
+
+          <form action="https://formspree.io/f/SEU_ENDPOINT_AQUI" method="POST">
+            <div class="field">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" required>
+            </div>
+
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="field">
+              <label for="telefone">Telefone / WhatsApp</label>
+              <input type="text" id="telefone" name="telefone">
+            </div>
+
+            <div class="field">
+              <label for="assunto">Assunto</label>
+              <select id="assunto" name="assunto" required>
+                <option value="">Selecione</option>
+                <option value="Compra de relógio">Compra de relógio</option>
+                <option value="Venda de relógio">Venda de relógio</option>
+                <option value="Intermediação">Intermediação</option>
+                <option value="Avaliação">Avaliação</option>
+                <option value="Outro">Outro</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" placeholder="Conte um pouco sobre o relógio ou sobre o que você precisa." required></textarea>
+            </div>
+
+            <input type="hidden" name="_subject" value="Novo contato - Colecionar Relógios">
+            <input type="hidden" name="_language" value="pt-BR">
+
+            <button class="button button-primary" type="submit">Enviar mensagem</button>
+          </form>
+
+          <p class="form-note">Para venda ou avaliação, envie marca, referência, medidas, estado geral e, se possível, fotos da peça.</p>
+        </div>
       </div>
-
-      <p style="margin-top:30px">Instagram: @colecionar_relogios</p>
     </div>
   </section>
 </main>
