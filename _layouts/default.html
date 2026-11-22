@@ -8,6 +8,12 @@
   {% seo %}
   {% feed_meta %}
 
+  {% if page.thumbnail %}
+    <meta property="og:image" content="{{ page.thumbnail | absolute_url }}">
+    <meta property="og:image:secure_url" content="{{ page.thumbnail | absolute_url }}">
+    <meta name="twitter:image" content="{{ page.thumbnail | absolute_url }}">
+  {% endif %}
+
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
 </head>
