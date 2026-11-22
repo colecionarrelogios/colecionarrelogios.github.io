@@ -7,7 +7,7 @@ title: Home
   <div class="container hero-grid">
     <div class="hero-copy">
       <span class="eyebrow">Relógios vintage com curadoria</span>
-      <h1>Relógios com história, identidade e presença no pulso.</h1>
+      <h1>Relógios com história,<br>identidade e presença.</h1>
 
       <p class="lead">
         A Colecionar Relógios é uma intermediadora de relógios vintage e neo-vintage,
@@ -50,6 +50,28 @@ title: Home
   </div>
 </section>
 
+<!-- Destaque principal -->
+{% assign featured = site.posts | first %}
+{% if featured %}
+<section class="featured-highlight">
+  <div class="container">
+    <div class="highlight-card">
+      <div class="highlight-media">
+        {% if featured.thumbnail %}
+          <img src="{{ featured.thumbnail }}" alt="{{ featured.title }}">
+        {% endif %}
+      </div>
+      <div class="highlight-content">
+        <span class="eyebrow">Destaque</span>
+        <h2><a href="{{ featured.url | relative_url }}">{{ featured.title }}</a></h2>
+        <p>{{ featured.description }}</p>
+        <a class="button button-primary" href="{{ featured.url | relative_url }}">Ler artigo</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
 <section class="featured-section">
   <div class="container">
     <div class="section-heading">
@@ -83,7 +105,7 @@ title: Home
     </div>
 
     <div class="featured-grid">
-      {% assign curiosidades = site.posts | where_exp: "post", "post.categories contains 'curiosidades'" | limit: 6 %}
+      {% assign curiosidades = site.posts | where_exp: "post", "post.categories contains 'curiosidades'" | limit: 3 %}
 
       {% for post in curiosidades %}
         {% include post-card.html post=post %}
