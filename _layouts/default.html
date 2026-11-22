@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
 
-  {% seo %}
-  {% feed_meta %}
-
   {% if page.thumbnail %}
     <meta property="og:image" content="{{ page.thumbnail | absolute_url }}">
     <meta property="og:image:secure_url" content="{{ page.thumbnail | absolute_url }}">
     <meta name="twitter:image" content="{{ page.thumbnail | absolute_url }}">
   {% endif %}
+
+  {% seo %}
+  {% feed_meta %}
 
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
