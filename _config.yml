@@ -45,10 +45,8 @@ defaults:
     values:
       layout: post
       author: Colecionar Relógios
-      image: /assets/images/og-default.jpg
 
   - scope:
       path: ""
     values:
       layout: default
-      image: /favicon.svg
