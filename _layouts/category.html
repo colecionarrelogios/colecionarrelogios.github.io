@@ -10,7 +10,11 @@ layout: default
       <p class="lead">{{ page.description }}</p>
     {% endif %}
     {% assign category_posts = site.posts | where_exp: "post", "post.categories contains page.category" %}
-    <p class="category-count">{{ category_posts.size }} {{ category_posts.size | pluralize: 'artigo', 'artigos' }}</p>
+    {% if category_posts.size == 1 %}
+      <p class="category-count">1 artigo</p>
+    {% elsif category_posts.size > 1 %}
+      <p class="category-count">{{ category_posts.size }} artigos</p>
+    {% endif %}
   </div>
 </section>
 
