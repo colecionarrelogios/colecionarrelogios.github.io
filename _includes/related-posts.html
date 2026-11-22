@@ -1,5 +1,12 @@
 {% assign current_category = page.categories[0] %}
-{% assign related_posts = site.posts | where_exp: "post", "post.url != page.url" | where_exp: "post", "post.categories contains current_category" | limit: 3 %}
+{% assign related_posts = site.posts | where_exp: "post", "post.url != page.url" | where_exp: "post", "post.categories contains current_category" %}
+
+{% if related_posts.size < 3 %}
+  {% assign fallback = site.posts | where_exp: "post", "post.url != page.url" | where_exp: "post", "post.categories contains current_category == false" | limit: 3 %}
+  {% assign related_posts = related_posts | concat: fallback | limit: 3 %}
+{% else %}
+  {% assign related_posts = related_posts | limit: 3 %}
+{% endif %}
 
 {% if related_posts.size > 0 %}
 <section class="related-posts">
