@@ -1,7 +1,8 @@
 title: Colecionar Relógios
-description: Relógios vintage e neo-vintage com curadoria, história e identidade.
+description: Relógios vintage e neo-vintage com curadoria, história e identidade. Intermediadora de peças selecionadas por design, autenticidade e relevância colecionável.
 
 url: "https://colecionarrelogios.com.br"
+baseurl: ""
 
 lang: pt-BR
 timezone: America/Sao_Paulo
@@ -13,6 +14,25 @@ paginate_path: "/page:num/"
 
 plugins:
   - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+author:
+  name: Colecionar Relógios
+  url: https://colecionarrelogios.com.br
+
+twitter:
+  username: colecionar_relogios
+  card: summary_large_image
+
+logo: /favicon.svg
+
+social:
+  name: Colecionar Relógios
+  links:
+    - https://colecionarrelogios.com.br
+    - https://www.instagram.com/colecionar_relogios/
 
 collections:
   posts:
@@ -25,8 +45,10 @@ defaults:
     values:
       layout: post
       author: Colecionar Relógios
+      image: /assets/images/og-default.jpg
 
   - scope:
       path: ""
     values:
       layout: default
+      image: /favicon.svg
