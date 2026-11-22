@@ -524,6 +524,13 @@ p {
   max-width: 62ch;
 }
 
+.category-count {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
 .content-card {
   background: rgba(255, 255, 255, 0.86);
   border: 1px solid var(--line);
@@ -750,14 +757,20 @@ p {
     width: 100%;
     overflow-x: auto;
     padding-bottom: 6px;
-    gap: 8px;
-    font-size: 0.9rem;
+    gap: 4px;
+    font-size: 0.88rem;
     -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .nav::-webkit-scrollbar {
+    display: none;
   }
 
   .nav a {
     flex: 0 0 auto;
-    padding: 8px 10px;
+    padding: 8px 12px;
+    white-space: nowrap;
   }
 
   .home-hero {
