@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://colecionarrelogios.com.br/sitemap.xml
