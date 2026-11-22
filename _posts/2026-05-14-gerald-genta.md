@@ -120,6 +120,8 @@ Para colecionadores, estudar Genta é entender uma virada fundamental da relojoa
 
 Seu legado não está apenas nas peças que desenhou, mas em todo relógio contemporâneo que tenta ser reconhecível por sua forma. Cada bezel geométrico, cada bracelete integrado, cada caixa esportiva em aço com acabamento de alta relojoaria carrega um pouco da revolução que Genta ajudou a iniciar.
 
+Se você se interessa por como os relógios envelhecem e ganham valor ao longo do tempo, vale a leitura do nosso artigo sobre [pátina nos relógios vintage](/curiosidades/patina-relogios-vintage/).
+
 Gérald Genta não apenas desenhou relógios. Ele desenhou uma nova ideia de desejo.
 
 ## Fontes consultadas
