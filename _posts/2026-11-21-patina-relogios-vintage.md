@@ -2,8 +2,8 @@
 layout: post
 title: "Pátina nos relógios vintage: quando a passagem do tempo se transforma em beleza, história e valor"
 description: "Entenda como surgem as pátinas nos relógios vintage, por que são valorizadas e conheça os exemplos mais famosos, do tropical dial ao Daytona Patrizzi."
-categories: [relogios]
-category_label: "Relógios"
+categories: [curiosidades]
+category_label: "Curiosidades"
 thumbnail: "https://media.lunaroyster.com/2019/03/IMG_4383-3.jpg"
 ---
 
