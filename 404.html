@@ -1,0 +1,25 @@
+---
+layout: default
+title: Página não encontrada
+permalink: /404.html
+---
+
+<section class="container narrow" style="text-align:center; padding:4rem 1rem;">
+  <h1>Página não encontrada</h1>
+  <p class="lead">O link que você tentou acessar não existe ou foi movido.</p>
+  
+  <p>
+    <a class="button button-primary" href="{{ '/' | relative_url }}">Voltar para a home</a>
+  </p>
+
+  <div style="margin-top:3rem; text-align:left;">
+    <h2>Artigos recentes</h2>
+    <ul style="list-style:none; padding:0;">
+      {% for post in site.posts limit:5 %}
+        <li style="margin:0.8rem 0;">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
