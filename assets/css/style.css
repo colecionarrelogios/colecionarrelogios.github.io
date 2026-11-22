@@ -613,6 +613,19 @@ a.button.button-whatsapp:hover {
   line-height: 1.85;
 }
 
+/* LINKS NO CONTEÚDO DOS ARTIGOS */
+.article-content a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.article-content a:hover {
+  color: var(--accent-dark);
+  text-decoration-thickness: 2px;
+}
+
 .related-posts {
   margin-top: 58px;
 }
