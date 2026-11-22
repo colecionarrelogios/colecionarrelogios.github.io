@@ -127,7 +127,7 @@ p {
 /* HOME HERO */
 
 .home-hero {
-  padding: 72px 0 46px;
+  padding: 80px 0 50px;
 }
 
 .hero-grid {
@@ -161,15 +161,15 @@ p {
 }
 
 .home-hero h1 {
-  max-width: 11.8ch;
-  font-size: clamp(3rem, 6.2vw, 5.35rem);
-  line-height: 1.06;
+  max-width: 12ch;
+  font-size: clamp(3.1rem, 6.4vw, 5.6rem);
+  line-height: 1.04;
 }
 
 .lead {
   max-width: 58ch;
   color: #495365;
-  font-size: 1.18rem;
+  font-size: 1.2rem;
 }
 
 .hero-copy p:not(.lead) {
@@ -180,7 +180,7 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  margin-top: 28px;
+  margin-top: 32px;
 }
 
 .button {
@@ -285,6 +285,50 @@ p {
   font-size: 0.94rem;
 }
 
+/* FEATURED HIGHLIGHT */
+
+.featured-highlight {
+  padding: 20px 0 40px;
+}
+
+.highlight-card {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+
+.highlight-media {
+  aspect-ratio: 16 / 10;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #d7dfe9;
+}
+
+.highlight-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.highlight-content {
+  padding: 12px 12px 12px 0;
+}
+
+.highlight-content h2 {
+  margin-bottom: 12px;
+}
+
+.highlight-content h2 a:hover {
+  color: var(--accent);
+}
+
 /* SECTIONS */
 
 .featured-section {
@@ -323,7 +367,7 @@ p {
 .post-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  gap: 24px;
 }
 
 /* POST CARDS */
@@ -662,6 +706,16 @@ p {
 
   .hero-media {
     max-width: 620px;
+  }
+
+  .highlight-card {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 16px;
+  }
+
+  .highlight-content {
+    padding: 8px 4px 4px;
   }
 
   .featured-grid,
