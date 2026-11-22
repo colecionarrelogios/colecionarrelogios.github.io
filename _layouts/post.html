@@ -12,6 +12,13 @@ layout: default
         <p class="article-description">{{ page.description }}</p>
       {% endif %}
 
+      {% assign words = content | number_of_words %}
+      {% assign reading_time = words | divided_by: 200 %}
+      {% if reading_time < 1 %}{% assign reading_time = 1 %}{% endif %}
+      <p class="reading-time" style="color:#666; font-size:0.9em; margin:0.5em 0 1.5em;">
+        {{ reading_time }} min de leitura
+      </p>
+
       {% if page.thumbnail %}
         <div class="article-cover">
           <img src="{{ page.thumbnail | relative_url }}" alt="{{ page.title }}">
